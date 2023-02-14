@@ -1,8 +1,8 @@
 /* 
-   EN: Uploading certificates to a centralized store
-   RU: Загрузка сертификатов в централизованное хранилище
+   EN: Support for a centralized certificate store
+   RU: Поддержка централизованного хранилища сертификатов
    --------------------------
-   (с) 2022 Разживин Александр | Razzhivin Alexander
+   (с) 2022-2023 Разживин Александр | Razzhivin Alexander
    kotyara12@yandex.ru | https://kotyara12.ru | tg: @kotyara1971
 */
 
