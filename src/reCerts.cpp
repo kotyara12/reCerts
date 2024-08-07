@@ -116,7 +116,7 @@ bool initTlsGlobalCAStore()
     vTaskDelay(1);
 
     #if _TLS_TELEGRAM_GLOBAL && defined(CONFIG_TELEGRAM_TLS_PEM_START)
-      if (api_telegram_org_pem_start != default_pem_start) {
+      if (&api_telegram_org_pem_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for Telegram API");
         err = esp_tls_set_global_ca_store((const unsigned char*)api_telegram_org_pem_start, api_telegram_org_pem_end-api_telegram_org_pem_start);
         if (err != ESP_OK) {
@@ -128,7 +128,7 @@ bool initTlsGlobalCAStore()
     #endif // _TLS_TELEGRAM_GLOBAL
 
     #if _TLS_OPENMON_GLOBAL && defined(CONFIG_OPENMON_TLS_PEM_START)
-      if (api_openmon_ru_pem_start != default_pem_start) {
+      if (&api_openmon_ru_pem_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for OpenMon API");
         err = esp_tls_set_global_ca_store((const unsigned char*)api_openmon_ru_pem_start, api_openmon_ru_pem_end-api_openmon_ru_pem_start);
         if (err != ESP_OK) {
@@ -140,7 +140,7 @@ bool initTlsGlobalCAStore()
     #endif // _TLS_OPENMON_GLOBAL
 
     #if _TLS_NARODMON_GLOBAL && defined(CONFIG_NARODMON_TLS_PEM_START)
-      if (api_narodmon_ru_start != default_pem_start) {
+      if (&api_narodmon_ru_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for NarodMon API");
         err = esp_tls_set_global_ca_store((const unsigned char*)api_narodmon_ru_pem_start, api_narodmon_ru_pem_end-api_narodmon_ru_pem_start);
         if (err != ESP_OK) {
@@ -164,7 +164,7 @@ bool initTlsGlobalCAStore()
     #endif // _TLS_THINGSPEAK_GLOBAL
 
     #if _TLS_OTA_GLOBAL && defined(CONFIG_OTA_PEM_START)
-      if (ota_pem_start != default_pem_start) {
+      if (&ota_pem_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for OTA");
         err = esp_tls_set_global_ca_store((const unsigned char*)ota_pem_start, ota_pem_end-ota_pem_start);
         if (err != ESP_OK) {
@@ -176,7 +176,7 @@ bool initTlsGlobalCAStore()
     #endif // _TLS_OTA_GLOBAL
 
     #if _TLS_MQTT1_GLOBAL && defined(CONFIG_MQTT1_TLS_PEM_START)
-      if (mqtt1_pem_start != default_pem_start) {
+      if (&mqtt1_pem_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for MQTT #1");
         err = esp_tls_set_global_ca_store((const unsigned char*)mqtt1_pem_start, mqtt1_pem_end-mqtt1_pem_start);
         if (err != ESP_OK) {
@@ -188,7 +188,7 @@ bool initTlsGlobalCAStore()
     #endif // _TLS_MQTT1_GLOBAL
 
     #if _TLS_MQTT2_GLOBAL && defined(CONFIG_MQTT2_TLS_PEM_START)
-      if (mqtt2_pem_start != default_pem_start) {
+      if (&mqtt2_pem_start != &default_pem_start) {
         rlog_i(logTAG, "Load certificate for MQTT #2");
         err = esp_tls_set_global_ca_store((const unsigned char*)mqtt2_pem_start, mqtt2_pem_end-mqtt2_pem_start);
         if (err != ESP_OK) {
